@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h1>Add New Post</h1>
+            <h1>Edit The Post</h1>
 
           </div>
         </div>
@@ -24,26 +24,26 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <form method="post" action="/add-post">
+        <form method="post" action="/posts/<%= post._id %>?_method=PUT">
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <input type="text" name="title" class="form-control" placeholder="Title" id="title" required>
+              <input type="text" name="title" value="<%= post.title %>" class="form-control" placeholder="Title" id="title" required>
             </div>
           </div>
           <br>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <input type="text" name="subtitle" class="form-control" placeholder="Subtitle" id="subtitle">
+              <input type="text" name="subtitle" value="<%= post.subtitle %>" class="form-control" placeholder="Subtitle" id="subtitle">
             </div>
           </div>
           <br>
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <textarea rows="10" name="detail" class="form-control" placeholder="Detail" id="detail" required></textarea>
+              <textarea rows="10" name="detail" class="form-control" placeholder="Detail" id="detail" required><%= post.detail %></textarea>
             </div>
           </div>
           <br>
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+          <button type="submit" class="btn btn-outline-success btn-lg" id="sendMessageButton">UPDATE</button>
         </form>
       </div>
     </div>

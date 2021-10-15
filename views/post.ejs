@@ -42,9 +42,27 @@
             <%= post.detail%>
           </p>
         </div>
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="row">
+            <div class="col-sm-4 ">
+              <a href="/posts/edit/<%= post._id %>" class="btn btn-outline-warning btn-lg" style="display: block;">UPDATE</a>
+            </div>
+            <div class="col-sm-4 "> <br> </div>
+            <div class="col-sm-4 ">
+              <a href="/posts/<%= post._id%>?_method=DELETE" onclick="return confirm('Are you sure?')" class="btn btn-outline-danger btn-lg" style="display: block;">DELETE</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </article>
+
+  
+
+  <div class="container">
+    
+    
+  </div>
 
   <hr>
 
