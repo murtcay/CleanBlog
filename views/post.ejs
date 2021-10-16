@@ -14,18 +14,9 @@
           <div class="post-heading">
             <h1><%= post.title%></h1>
             <h2 class="subheading"><%= post.subtitle%></h2>
-            <span class="meta">
-              <% let date = new Date(post.dateCreated);%>
-
-              <% let year =  ((date.getFullYear()<10) ? `0${date.getFullYear()}`:`${date.getFullYear()}`); %>
-                
-              <% let month = ((date.getMonth()<10) ? `0${date.getMonth()}`:`${date.getMonth()}`); %>
-              <% let day = ((date.getDate()<10) ? `0${date.getDate()}`:`${date.getDate()}`); %>
-              <% let hour = ((date.getHours()<10) ? `0${date.getHours()}`:`${date.getHours()}`); %>
-              <% let min = ((date.getMinutes()<10) ? `0${date.getMinutes()}`:`${date.getMinutes()}`); %>
-            
+            <span class="meta">            
               <a href="#">Start Bootstrap</a>
-              on <%= `${day}-${month}-${year}`%> at <%= `${hour}:${min}`%>
+              on <%=moment(new Date(post.dateCreated)).format('MMMM Do YYYY, HH:mm'); %>
             </span>
           </div>
         </div>

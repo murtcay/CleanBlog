@@ -1,4 +1,5 @@
 const Post = require('../modules/Post');
+const moment = require('moment');
 
 exports.getAboutPage = (req, res) => {
   res.render('about');
@@ -12,6 +13,7 @@ exports.getPostEditPage = async (req, res) => {
   // console.log(req.params.id);
   const post = await Post.findById(req.params.id);
   res.render('edit-post', {
-    post: post
+    post: post,
+    moment:moment
   });
 };

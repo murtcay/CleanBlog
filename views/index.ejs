@@ -34,18 +34,9 @@
                 <%= posts[i].subtitle%>
               </h3>
             </a>
-            <p class="post-meta">Posted by
-              <% let date = new Date(posts[i].dateCreated);%>
-
-              <% let year =  ((date.getFullYear()<10) ? `0${date.getFullYear()}`:`${date.getFullYear()}`); %>
-                
-              <% let month = ((date.getMonth()<10) ? `0${date.getMonth()}`:`${date.getMonth()}`); %>
-              <% let day = ((date.getDate()<10) ? `0${date.getDate()}`:`${date.getDate()}`); %>
-              <% let hour = ((date.getHours()<10) ? `0${date.getHours()}`:`${date.getHours()}`); %>
-              <% let min = ((date.getMinutes()<10) ? `0${date.getMinutes()}`:`${date.getMinutes()}`); %>
-            
-              <a href="#">Start Bootstrap</a>
-              on <%= `${day}-${month}-${year}`%> at <%= `${hour}:${min}`%></p>
+            <p class="post-meta">Posted by            
+              <a href="#">Start Bootstrap</a> on <%=moment(new Date(posts[i].dateCreated)).format('MMMM Do YYYY, HH:mm'); %>
+            </p>
           </div>
         <% }%>
         <hr>

@@ -1,16 +1,19 @@
-const Post = require('../modules/Post')
+const Post = require('../modules/Post');
+const moment = require('moment');
 
 exports.getAllPosts = async (req, res) => {
   const posts = await Post.find({}).sort('-dateCreated');
   res.render('index', {
-    posts: posts
+    posts: posts,
+    moment: moment
   });
 };
 
 exports.getPost = async (req, res) => {
   const post = await Post.findById(req.params.id);
   res.render('post', {
-    post: post
+    post: post,
+    moment: moment
   });
 };
 

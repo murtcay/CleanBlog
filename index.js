@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 // connect DB
-mongoose.connect('mongodb://localhost/cleanblog-test-db', {
+mongoose.connect('************************************', { 
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
